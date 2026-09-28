@@ -85,6 +85,9 @@
   .bike use.empty{fill:none;stroke:var(--g3);stroke-dasharray:40 30}
   .shop{border-style:double;border-width:5px}
   .rd{border-radius:50%;padding:0;font-size:.8em}
+  /* ticked = filled circle; a pop-up button on a row's trailing edge (Apple HIG, toggles and pop-up buttons, 28/09/2026) */
+  .rd.on{background:var(--ink);color:#fff}
+  .pop{border:0;padding:0 2px;font-size:.87em;white-space:nowrap}
   .num{font-size:1.4em;font-weight:700;font-variant-numeric:tabular-nums}
   .col{flex-direction:column;align-items:stretch;gap:6px}
   .c.col{display:flex}
@@ -396,19 +399,17 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 </section>
 <section class="scr" id="s10-picked-b-each-ticked-part-says-serviced" hidden>
 <div class="ph"><div class="sb"></div>
-      <div class="hd"><span class="b" style="font-size:.87em;font-weight:400" data-to="s1-picked-a-c-s-bike-buttons">Cancel</span><span class="grow center" style="margin-right:52px">Log a session</span></div>
+      <div class="stb" style="padding:4px 12px;min-height:52px"><span class="b" style="font-size:.87em;font-weight:400" data-to="s1-picked-a-c-s-bike-buttons">Cancel</span><b>3 parts ticked</b><span class="b pri" style="font-size:.87em" data-to="s10-state-saved-what-the-reset-did">Save</span></div>
       <div class="bd" style="gap:6px">
         <div class="big" style="font-size:1.3em">What did you do?</div>
         <div class="t" data-dead="changing the bike or the date: not drawn"><span class="grow">Grizl · <b>today</b></span><span class="s">change</span></div>
         <div class="lbl">Due</div>
-        <div class="t" style="flex-direction:column;align-items:stretch;gap:6px" data-dead="ticking is not simulated: the drawn ticks and picks stand"><div style="display:flex;gap:10px;align-items:center"><span class="b" style="border-radius:50%;padding:0">✓</span><div class="grow"><b>Chain</b><div class="s">■ 40 km past its wax</div></div></div>
-          <div class="seg"><span class="b" style="background:var(--g2)">Serviced</span><span class="b">Replaced</span></div></div>
-        <div class="t" style="flex-direction:column;align-items:stretch;gap:6px" data-dead="ticking is not simulated: the drawn ticks and picks stand"><div style="display:flex;gap:10px;align-items:center"><span class="b" style="border-radius:50%;padding:0">✓</span><div class="grow"><b>Sealant</b><div class="s">▲ 5 of 6 months</div></div></div>
-          <div class="seg"><span class="b" style="background:var(--g2)">Serviced</span><span class="b">Replaced</span></div></div>
+        <div class="t" data-dead="ticking is not simulated: the drawn ticks and picks stand"><span class="b rd on">✓</span><div class="grow"><b>Chain</b><div class="s">■ 40 km past its wax</div></div><span class="b pop">Serviced ⌃⌄</span></div>
+        <div class="t" data-dead="ticking is not simulated: the drawn ticks and picks stand"><span class="b rd on">✓</span><div class="grow"><b>Sealant</b><div class="s">▲ 5 of 6 months</div></div><span class="b pop">Serviced ⌃⌄</span></div>
         <div class="lbl">The rest of the Grizl · 10</div>
-        <div class="t" style="flex-direction:column;align-items:stretch;gap:6px" data-dead="ticking is not simulated: the drawn ticks and picks stand"><div style="display:flex;gap:10px;align-items:center"><span class="b" style="border-radius:50%;padding:0">✓</span><div class="grow"><b>Disc pads</b> · rear<div class="s">○ 1 200 km left</div></div></div>
-          <div class="seg"><span class="b">Serviced</span><span class="b" style="background:var(--g2)">Replaced</span></div></div>
-        <div class="main" data-to="s10-state-saved-what-the-reset-did">Save: 2 serviced, 1 replaced</div>
+        <div class="t" data-dead="ticking is not simulated: the drawn ticks and picks stand"><span class="b rd on">✓</span><div class="grow"><b>Disc pads</b> · rear<div class="s">○ 1 200 km left</div></div><span class="b pop">Replaced ⌃⌄</span></div>
+        <div class="t"><span class="b rd"></span><div class="grow"><b>Rotor</b> · rear<div><span class="sk" style="width:90px"></span></div></div></div>
+        <div class="s center">↓ 8 more parts</div>
       </div>
     </div>
 </section>
