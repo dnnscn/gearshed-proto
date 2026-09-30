@@ -27,8 +27,10 @@
   .ph{width:360px;height:640px;border:2px solid var(--ink);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;background:#fff;position:relative;font-size:17px}
   .ph.x2{font-size:34px}
   .sb{flex:0 0 24px}
-  .hd{display:flex;align-items:center;gap:8px;padding:0 12px;min-height:52px;font-weight:700;font-size:1.15em}
-  .hd .r{margin-left:auto;font-weight:400;font-size:.87em}
+  /* text: Apple's iOS text styles at the default size (HIG, typography; your pick 2a, 30/09/2026):
+     Headline 17 semibold for bar and sheet titles · Body 17 regular for rows · Footnote 13 for second lines and group labels · Title 1 28 · Title 2 22 */
+  .hd{display:flex;align-items:center;gap:8px;padding:0 12px;min-height:52px;font-weight:600;font-size:1em}
+  .hd .r{margin-left:auto;font-weight:400;font-size:1em}
   .bd{flex:1;overflow:hidden;padding:4px 16px 12px;display:flex;flex-direction:column;gap:8px}
   .tb{display:flex;border-top:2px solid var(--ink);flex:0 0 56px}
   .tb > span{flex:1;display:grid;place-items:center;font-size:12px;font-weight:600}
@@ -42,9 +44,10 @@
   .img{background:repeating-linear-gradient(45deg,var(--g1) 0 10px,var(--g2) 10px 20px);border-radius:8px;display:grid;place-items:center;color:#444;font-size:12px;position:relative}
   .open-box{border:2px dashed var(--g3);border-radius:10px;color:#555;padding:8px 10px;font-size:.87em}
   .sk{display:inline-block;height:10px;background:var(--g2);border-radius:5px;vertical-align:middle}
-  .k{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
-  .s{font-size:.8em;color:#555}
-  .lbl{font-size:.75em;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#555;margin-top:4px}
+  .t b{font-weight:400}
+  .k{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:400;white-space:nowrap}
+  .s{font-size:.765em;color:#555}
+  .lbl{font-size:.765em;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#555;margin-top:4px}
   .sh{width:20px;flex:0 0 20px;text-align:center;font-size:1em}
   .grow{flex:1;min-width:0}
   .chips{display:flex;gap:12px}
@@ -64,12 +67,12 @@
   /* a sheet's top toolbar: Cancel or ‹ on the leading edge, Done on the trailing edge (Apple HIG, sheets) */
   .stb{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:8px;min-height:44px}
   .stb > :first-child{justify-self:start}
-  .stb > b{grid-column:2;text-align:center}
+  .stb > b{grid-column:2;text-align:center;font-weight:600}
   .stb > :last-child:not(b){grid-column:3;justify-self:end}
   .pair{display:flex;gap:8px}
   .pair > *{flex:1;margin-top:0;min-height:52px}
   .card{position:absolute;left:12px;right:12px;bottom:72px;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
-  .big{font-size:1.6em;font-weight:700}
+  .big{font-size:1.647em;font-weight:700}
   .center{text-align:center}
   .muted{opacity:.35}
   .red{color:#e9152d}
@@ -90,7 +93,7 @@
   /* ticked = filled circle; a pop-up button on a row's trailing edge (Apple HIG, toggles and pop-up buttons, 28/09/2026) */
   .rd.on{background:var(--ink);color:#fff}
   .pop{border:0;padding:0 2px;font-size:.87em;white-space:nowrap}
-  .num{font-size:1.4em;font-weight:700;font-variant-numeric:tabular-nums}
+  .num{font-size:1.294em;font-weight:700;font-variant-numeric:tabular-nums}
   .col{flex-direction:column;align-items:stretch;gap:6px}
   .c.col{display:flex}
   .menu{position:absolute;background:#fff;border:2px solid var(--ink);border-radius:14px;overflow:hidden}
@@ -110,7 +113,7 @@
   .alert{position:absolute;left:40px;right:40px;top:200px;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:6px;text-align:center}
   /* a delete confirmation, as Apple's Reminders draws it: a question, stacked buttons, Cancel last (BIM.77, 29/09/2026) */
   .alert.conf{left:24px;right:24px;top:190px;text-align:left;gap:10px;padding:18px}
-  .pill{display:grid;place-items:center;min-height:48px;border-radius:24px;background:#fff;border:2px solid var(--ink);font-weight:600;text-align:center;padding:0 12px}
+  .pill{display:grid;place-items:center;min-height:48px;border-radius:10px;background:#fff;border:2px solid var(--ink);font-weight:600;text-align:center;padding:0 12px}
 
 /* the clickable version */
 body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:manipulation}
@@ -238,7 +241,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 </section>
 <section class="scr" id="s2-picked-a-four-tabs-under-the-bike-due-pa" hidden>
 <div class="ph"><div class="sb"></div>
-      <div class="hd">Grizl<span class="s" style="font-weight:400">8 240 km</span><span class="b r" aria-label="Add" data-to="s2-tapped-add-part-add-spare-add-bike-a-men">+</span></div>
+      <div class="hd">Grizl<span class="s" style="font-weight:400">8 240 km</span><span class="b r" aria-label="Add" data-to="s2-tapped-add-part-add-spare-add-bike-a-men">+</span></div>
       <div class="bd">
         <div class="seg"><span class="b on" data-dead="already showing">Grizl</span><span class="b" data-dead="another bike&#x27;s screen: not drawn">Road</span><span class="b" data-dead="another bike&#x27;s screen: not drawn">Hardtail</span><span class="b" data-dead="another bike&#x27;s screen: not drawn">Winter</span></div>
         <svg class="bike" viewBox="99 60 1851 1150" role="img" aria-label="bike"><use href="#frame" class="fr"/><use href="#z-wheel_rear" class="ds" data-to="s2-state-tap-a-wheel-the-wheelset-s-own-pag"/><use href="#z-wheel_front" data-to="s2-state-tap-a-wheel-the-wheelset-s-own-pag"/><use href="#z-hub_front" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-fork" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-hub_rear" data-to="s2-state-tap-an-area-with-two-due-parts-her"/><use href="#z-crank" data-to="s2-state-tap-an-area-with-two-due-parts-her"/><use href="#z-chain" class="od" data-to="s2-state-tap-an-area-with-two-due-parts-her"/><use href="#z-seat" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-headset" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-cockpit" data-dead="this area&#x27;s sheet: not drawn"/></svg>
@@ -288,7 +291,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
         <div class="t" data-dead="only the gravel kit is drawn"><span class="img" style="width:40px;height:40px;flex:0 0 40px">icon</span><span class="grow"><b>Mountain</b><div class="s">hardtail 13 · full suspension 16</div></span>›</div>
         <div class="t" data-dead="only the gravel kit is drawn"><span class="img" style="width:40px;height:40px;flex:0 0 40px">icon</span><span class="grow"><b>E-bike</b><div class="s">city 12 · trekking 11 · e-MTB 17</div></span>›</div>
         <div class="t" data-dead="only the gravel kit is drawn"><span class="img" style="width:40px;height:40px;flex:0 0 40px">icon</span><span class="grow"><b>Triathlon</b><div class="s">13 parts to start</div></span>›</div>
-        <div class="t" style="margin-top:auto" data-to="s21-import-instead-from-add-a-bike"><span class="grow"><b>Import instead</b><div class="s">ProBikeGarage · Strava · your shop</div></span>›</div>
+        <div class="t" style="margin-top:auto" data-to="s21-import-instead-from-add-a-bike"><span class="grow"><b>Import instead</b><div class="s">your bikes and their km, from Strava</div></span>›</div>
       </div>
     </div>
 </section>
@@ -338,9 +341,9 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="stb" style="padding:4px 12px;min-height:52px"><span class="b" aria-label="Back" data-to="s21-import-instead-from-add-a-bike">‹</span><b>From Strava</b></div>
       <div class="bd">
         <b>3 bikes on Strava</b>
-        <div class="c col"><div style="display:flex;align-items:center;gap:8px"><span class="grow"><b>Canyon Grizl</b><div class="s">8 240 km</div></span><span class="sw"></span></div>
+        <div class="c col"><div style="display:flex;align-items:center;gap:8px"><span class="grow"><b>Canyon Grizl</b><div class="s">8 240 km</div></span><span class="sw"></span></div>
           <div class="seg"><span class="b" data-dead="picking is not simulated: the drawn picks stand">Road</span><span class="b on" data-dead="picking is not simulated: the drawn picks stand">Gravel</span><span class="b" data-dead="picking is not simulated: the drawn picks stand">MTB</span><span class="b" data-dead="picking is not simulated: the drawn picks stand">E-bike</span></div></div>
-        <div class="c col"><div style="display:flex;align-items:center;gap:8px"><span class="grow"><b>Road bike</b><div class="s">12 480 km</div></span><span class="sw"></span></div>
+        <div class="c col"><div style="display:flex;align-items:center;gap:8px"><span class="grow"><b>Road bike</b><div class="s">12 480 km</div></span><span class="sw"></span></div>
           <div class="seg"><span class="b on" data-dead="picking is not simulated: the drawn picks stand">Road</span><span class="b" data-dead="picking is not simulated: the drawn picks stand">Gravel</span><span class="b" data-dead="picking is not simulated: the drawn picks stand">MTB</span><span class="b" data-dead="picking is not simulated: the drawn picks stand">E-bike</span></div></div>
         <div class="c" style="display:flex;align-items:center;gap:8px"><span class="grow"><b>Old MTB</b><div class="s">retired on Strava</div></span><span class="sw off"></span></div>
         <div class="main" data-dead="each bike&#x27;s questions and kit: drawn once, for the gravel bike (section 8)">Next · 2 bikes</div>
@@ -351,7 +354,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <div class="ph"><div class="sb"></div>
       <div class="stb" style="padding:4px 12px;min-height:52px"><span class="b" aria-label="Back" data-to="s8-quick-questions-a-waxed-chain-in-a-rotat">‹</span><b>Gravel kit</b><span class="b pri" aria-label="Add" data-to="s2-state-just-added-the-first-bike">✓</span></div>
       <div class="bd">
-        <div class="t" data-dead="changing the date: not drawn"><span class="grow">When did you get it?</span><span class="b dp">28/09/2026</span></div>
+        <div class="t" data-dead="changing the date: not drawn"><span class="grow">When did you get it?</span><span class="b pop">Today ⌃⌄</span></div>
         <div class="t" data-dead="switches are not simulated: the used-bike kit is drawn in section 8"><span class="grow">Bought new</span><span class="sw"></span></div>
         <div class="t" data-dead="switches are not simulated: the drawn kit stands"><span class="grow"><b>Chain</b> · waxed<div class="s">re-wax every 250–300 km</div></span><span class="sw"></span></div>
         <div class="t" data-dead="switches are not simulated: the drawn kit stands"><span class="grow"><b>Tyres</b> · front + rear<div class="s"><span class="sk" style="width:90px"></span></div></span><span class="sw"></span></div>
@@ -367,7 +370,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="bd">
         <svg class="bike" viewBox="99 60 1851 1150" role="img" aria-label="bike"><use href="#frame" class="fr"/><use href="#z-wheel_rear" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-wheel_front" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-hub_front" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-fork" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-hub_rear" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-crank" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-chain" class="ds" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-seat" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-headset" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-cockpit" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/></svg>
         <div class="c"><b>2 spare chains are on your shelf.</b><div class="s">They count no km until you fit one.</div></div>
-        <div class="t" data-dead="the job&#x27;s page: not drawn"><span class="sh">▲</span><span class="grow"><b>Strip &amp; prep</b> the new chain</span><span class="k">before its first wax</span>›</div>
+        <div class="t" data-dead="the job&#x27;s page: not drawn"><span class="sh">▲</span><span class="grow"><b>Strip &amp; prep</b> the new chain<div class="s">before its first wax</div></span>›</div>
         <div class="t" data-to="s22-state-the-phone-asks-once-allow-notifica"><span class="grow"><b>Warn me when a part is due</b><div class="s">your phone asks you once</div></span></div>
         <div class="t" data-to="s12-b-only-no-account-yet"><span class="grow"><b>Save your garage to an account</b><div class="s">so a new phone doesn't lose it</div></span>›</div>
       </div>
@@ -405,7 +408,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">‹ Grizl</span><span class="b" style="margin-left:auto;font-weight:700" data-to="s3r-tapped-part-settings-retire-and-delete-i">⋯</span></div>
       <div class="bd">
-        <div><div class="big">Chain</div><div>SRAM Force · <b>2 140 km</b><div class="s">waxed · rotation A, 1 of 3 · "training 1"</div></div></div>
+        <div><div class="big">Chain</div><div>SRAM Force · <b>2 140 km</b><div class="s">waxed · rotation A, 1 of 3 · "training 1"</div></div></div>
         <div class="c"><div class="lbl">Wax</div><b>■ 40 km past its wax</b><div class="s">wax every 300 km · an estimate from rides</div></div>
         <div class="c"><div class="lbl">Wear</div><b>under 0.5% · checked 12/09/2026</b><div class="s">Park CC-4.2 · replace at 0.75% (SRAM: 0.8%)</div></div>
         <div class="t" data-to="s17-this-part-s-history-chain-a-with-its-wax"><span class="grow">This part's history</span>›</div>
@@ -417,13 +420,13 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <section class="scr" id="s3-swap-the-name-on-each-row-the-chain-that" hidden>
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk">‹ Grizl</span></div>
-      <div class="bd"><div class="big">Chain</div><div>SRAM Force · 2 140 km</div></div>
+      <div class="bd"><div class="big">Chain</div><div>SRAM Force · 2 140 km</div></div>
       <div class="tb"><span>Due</span><span class="on">Garage</span><span>Rides</span><span>Settings</span></div>
       <div class="scrim"></div>
       <div class="sheet">
         <div class="grab"></div>
         <div class="stb"><span class="b" aria-label="Cancel" data-to="s3-a-chain-in-a-rotation-on-the-bike-swap-l">✕</span><b>Swap chain</b><span class="b pri muted" aria-label="Done, inactive" data-dead="inactive until a chain is ticked">✓</span></div>
-        <div class="s">Chain A · 2 140 km comes off. Keep it as a spare, or retire it?</div>
+        <div class="s">Chain A · 2 140 km comes off. Keep it as a spare, or retire it?</div>
         <div class="seg"><span class="b on" data-dead="picking is not simulated: the drawn pick stands">Spare</span><span class="b" data-dead="picking is not simulated: the drawn pick stands">Retired</span></div>
         <div class="lbl">On the shelf</div>
         <div class="t" data-to="s4-picked-b-the-km-behind-the-chain-chain-b"><span class="grow"><b>Chain B</b> · "training 2"<div class="s">waxed 12/09/2026 · ready</div></span><span class="k">412 km</span></div>
@@ -473,7 +476,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
         <div class="t" data-dead="only chain B&#x27;s own screen is drawn"><span class="grow"><b>Chain D</b> · never fitted<div class="s">bought 20/09/2026</div></span><span class="k">0 km</span>›</div>
         <div class="b" data-to="s3-the-wax-session-shelf-tab-several-chains">Log a wax session</div>
         <div class="lbl">Wheelsets</div>
-        <div class="t" data-dead="only chain B&#x27;s own screen is drawn"><span class="grow"><b>Spare wheelset</b><div class="s">Fulcrum Rapid Red · off the Road, 10/05/2026</div></span><span class="k">3 400 km</span>›</div>
+        <div class="t" data-dead="only chain B&#x27;s own screen is drawn"><span class="grow"><b>Spare wheelset</b><div class="s">Fulcrum Rapid Red · off the Road, 10/05/2026</div></span><span class="k">3 400 km</span>›</div>
         <div class="b" data-dead="its form is drawn without its first step (section 16): not linked">+ Add a spare</div>
       </div>
       <div class="tb"><span data-to="s1-picked-a-c-s-bike-buttons">Due</span><span class="on" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Garage</span><span data-to="s19-rides-list-rides-waiting-for-a-bike-come">Rides</span><span data-to="s12-settings-the-fourth-tab">Settings</span></div>
@@ -485,7 +488,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="bd">
         <div class="seg"><span class="b" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Due 1</span><span class="b" data-to="s2-a-scrolled-on-the-parts-tab-every-part-n">Parts 12</span><span class="b" data-to="s2-a-scrolled-on-the-shelf-tab">Shelf 3</span><span class="b on" data-dead="already showing">History</span></div>
         <div class="s">46 entries since 03/2024</div>
-        <div class="t" data-to="s17-entry-a-swap-one-line-two-parts"><span class="grow"><b>Chain swapped</b> · 28/09/2026<div class="s">chain B on · chain A retired at 2 140 km</div></span>›</div>
+        <div class="t" data-to="s17-entry-a-swap-one-line-two-parts"><span class="grow"><b>Chain swapped</b> · 28/09/2026<div class="s">chain B on · chain A retired at 2 140 km</div></span>›</div>
         <div class="t shop" data-to="s17-entry-your-shop-s-locked"><span class="grow"><b>Brake bleed</b> · 20/09/2026<div class="s">written by your shop · locked</div></span>›</div>
         <div class="t" data-dead="this entry&#x27;s page: not drawn"><span class="grow"><b>Chain B re-waxed</b> · 12/09/2026<div class="s">off the bike</div></span>›</div>
         <div class="t" data-dead="this entry&#x27;s page: not drawn"><span class="grow"><b>Chain A measured</b> · 12/09/2026<div class="s">under 0.5% · Park CC-4.2</div></span>›</div>
@@ -496,7 +499,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 </section>
 <section class="scr" id="s2-tapped-add-part-add-spare-add-bike-a-men" data-outside="s2-picked-a-four-tabs-under-the-bike-due-pa" hidden>
 <div class="ph"><div class="sb"></div>
-      <div class="hd">Grizl<span class="s" style="font-weight:400">8 240 km</span><span class="b r" aria-label="Add" style="background:var(--g2)" data-dead="a tap outside the open menu closes it">+</span></div>
+      <div class="hd">Grizl<span class="s" style="font-weight:400">8 240 km</span><span class="b r" aria-label="Add" style="background:var(--g2)" data-dead="a tap outside the open menu closes it">+</span></div>
       <div class="bd muted">
         <div class="seg"><span class="b on" data-dead="a tap outside the open menu closes it">Grizl</span><span class="b" data-dead="a tap outside the open menu closes it">Road</span><span class="b" data-dead="a tap outside the open menu closes it">Hardtail</span><span class="b" data-dead="a tap outside the open menu closes it">Winter</span></div>
         <svg class="bike" viewBox="99 60 1851 1150" role="img" aria-label="bike"><use href="#frame" class="fr"/><use href="#z-wheel_rear" class="ds" data-dead="a tap outside the open menu closes it"/><use href="#z-wheel_front" data-dead="a tap outside the open menu closes it"/><use href="#z-hub_front" data-dead="a tap outside the open menu closes it"/><use href="#z-fork" data-dead="a tap outside the open menu closes it"/><use href="#z-hub_rear" data-dead="a tap outside the open menu closes it"/><use href="#z-crank" data-dead="a tap outside the open menu closes it"/><use href="#z-chain" class="od" data-dead="a tap outside the open menu closes it"/><use href="#z-seat" data-dead="a tap outside the open menu closes it"/><use href="#z-headset" data-dead="a tap outside the open menu closes it"/><use href="#z-cockpit" data-dead="a tap outside the open menu closes it"/></svg>
@@ -513,11 +516,9 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">‹ Grizl</span><span class="b" style="margin-left:auto;font-weight:700" data-dead="the menu is linked on the chain&#x27;s page">⋯</span></div>
       <div class="bd" style="gap:5px">
-        <div><div class="big">Wheelset</div><div>Grizl's wheels · <b>8 240 km</b><div class="s">DT Swiss G 1800</div></div></div>
-        <div class="t" data-dead="the sealant&#x27;s page: not drawn"><span class="sh">▲</span><span class="grow"><b>Sealant</b> · rear<div class="s">Stan's NoTubes</div></span><span class="k">due in 1 month</span>›</div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Tyre</b> · rear<div class="s">Schwalbe G-One R · 40 mm</div></span><span class="k">3 300 km</span>›</div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Tyre</b> · front<div class="s">Schwalbe G-One R · 40 mm</div></span><span class="k">1 900 km</span>›</div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Cassette</b><div class="s">SRAM Force XPLR · 10–44</div></span><span class="k">6 400 km</span>›</div>
+        <div><div class="big">Wheelset</div><div>Grizl's wheels · <b>8 240 km</b><div class="s">DT Swiss G 1800</div></div></div>
+        <div class="t" data-to="s2-state-rear-wheel-tapped-the-parts-on-tha"><span class="sh">▲</span><span class="grow"><b>Rear wheel</b><div class="s">Sealant due in 1 month · tyre, cassette, rotor</div></span>›</div>
+        <div class="t" data-dead="the front wheel&#x27;s page: not drawn, it is the rear wheel&#x27;s with a tyre and a rotor"><span class="grow"><b>Front wheel</b><div class="s">Tyre, rotor</div></span>›</div>
         <div class="t" data-dead="linked on the chain&#x27;s page"><span class="grow">This part's history</span>›</div>
         <div class="main" data-to="s4-state-a-wheelset-the-shelf-and-other-bik">Swap</div>
       </div>
@@ -530,10 +531,10 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="bd" style="gap:7px">
         <div class="seg"><span class="b" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Due 2</span><span class="b on" data-dead="already showing">Parts 12</span><span class="b" data-to="s2-a-scrolled-on-the-shelf-tab">Shelf 4</span><span class="b" data-to="s17-history-tab-yours-and-your-shop-s">History</span></div>
         <div class="lbl">Drivetrain</div>
-        <div class="t" data-to="s3-a-chain-in-a-rotation-on-the-bike-swap-l"><span class="sh">■</span><span class="grow"><b>Chain A</b> · "training 1"<div class="s">40 km past its wax · 3 spares on the shelf</div></span><span class="k">2 140 km</span>›</div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Cassette</b><div class="s">SRAM Force XPLR · 10–44</div></span><span class="k">6 400 km</span>›</div>
+        <div class="t" data-to="s3-a-chain-in-a-rotation-on-the-bike-swap-l"><span class="sh">■</span><span class="grow"><b>Chain A</b> · "training 1"<div class="s">40 km past its wax · 3 spares on the shelf</div></span><span class="k">2 140 km</span>›</div>
+        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Cassette</b><div class="s">SRAM Force XPLR · 10–44</div></span><span class="k">6 400 km</span>›</div>
         <div class="lbl">Wheels</div>
-        <div class="t" data-to="s2-state-tap-a-wheel-the-wheelset-s-own-pag"><span class="grow"><b>Wheelset</b> · Grizl's wheels<div class="s">DT Swiss G 1800 · 1 spare on the shelf</div></span><span class="k">8 240 km</span>›</div>
+        <div class="t" data-to="s2-state-tap-a-wheel-the-wheelset-s-own-pag"><span class="grow"><b>Wheelset</b> · Grizl's wheels<div class="s">DT Swiss G 1800 · 1 spare on the shelf</div></span><span class="k">8 240 km</span>›</div>
         <div class="t" data-dead="the sealant&#x27;s page: not drawn"><span class="sh">▲</span><span class="grow"><b>Sealant</b> · rear<div class="s">Stan's NoTubes</div></span><span class="k">due in 1 month</span>›</div>
         <div class="s center">↓ 8 more parts, down to the headset</div>
       </div>
@@ -542,7 +543,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 </section>
 <section class="scr" id="s2-state-tap-an-area-with-two-due-parts-her" hidden>
 <div class="ph"><div class="sb"></div>
-      <div class="hd">Grizl<span class="s" style="font-weight:400">8 240 km</span><span class="b r" aria-label="Add">+</span></div>
+      <div class="hd">Grizl<span class="s" style="font-weight:400">8 240 km</span><span class="b r" aria-label="Add">+</span></div>
       <div class="bd">
         <div class="seg"><span class="b on">Grizl</span><span class="b">Road</span><span class="b">Hardtail</span><span class="b">Winter</span></div><svg class="bike" viewBox="99 60 1851 1150" role="img" aria-label="bike"><use href="#frame" class="fr"/><use href="#z-wheel_rear"/><use href="#z-wheel_front"/><use href="#z-hub_front"/><use href="#z-fork"/><use href="#z-hub_rear" class="ds"/><use href="#z-crank"/><use href="#z-chain" class="od"/><use href="#z-seat"/><use href="#z-headset"/><use href="#z-cockpit"/></svg>
       </div>
@@ -551,7 +552,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="sheet">
         <div class="grab"></div>
         <div class="stb"><span class="b" aria-label="Close" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">✕</span><b>Drivetrain</b></div>
-        <div class="s">with the rear brake</div>
+        <div class="s">Chain, gears, cranks and rear brake</div>
         <div class="t" data-to="s3-a-chain-in-a-rotation-on-the-bike-swap-l"><span class="sh">■</span><span class="grow"><b>Chain A</b><div class="s">SRAM Force · "training 1"</div></span><span class="k">40 km past its wax</span>›</div>
         <div class="t"><span class="sh">▲</span><span class="grow"><b>Cassette</b><div class="s">SRAM Force XPLR · 10–44</div></span><span class="k">300 km left</span>›</div>
         <div class="t"><span class="grow">5 more parts in this area</span>›</div>
@@ -580,7 +581,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <section class="scr" id="s4-state-a-wheelset-the-shelf-and-other-bik" hidden>
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-dead="behind the sheet">‹ Grizl</span></div>
-      <div class="bd muted"><div class="big">Wheelset</div><div>Grizl's wheels · 8 240 km</div></div>
+      <div class="bd muted"><div class="big">Wheelset</div><div>Grizl's wheels · 8 240 km</div></div>
       <div class="tb"><span>Due</span><span class="on">Garage</span><span>Rides</span><span>Settings</span></div>
       <div class="scrim"></div>
       <div class="sheet">
@@ -589,36 +590,32 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
         <div class="seg"><span class="b on" data-dead="already showing">Wheelset</span><span class="b" data-dead="the front wheels&#x27; list: not drawn">Front</span><span class="b" data-to="s4-state-rear-picked-one-wheel-with-its-cas">Rear</span></div>
         <div class="s">The Grizl's wheels go on the shelf, with their tyres, cassette and rotors.</div>
         <div class="lbl">On the shelf</div>
-        <div class="t" data-dead="only the race wheels&#x27; move is drawn"><span class="grow"><b>Spare wheelset</b><div class="s">Fulcrum Rapid Red</div></span><span class="k">3 400 km</span></div>
+        <div class="t" data-dead="only the race wheels&#x27; move is drawn"><span class="grow"><b>Spare wheelset</b><div class="s">Fulcrum Rapid Red</div></span><span class="k">3 400 km</span></div>
         <div class="lbl">On another bike</div>
-        <div class="t" data-to="s4-state-race-wheels-ticked-lights-up"><span class="grow"><b>Race wheels</b> · on Road<div class="s">Zipp 303 S · Road is left without a wheelset</div></span><span class="k">1 150 km</span></div>
+        <div class="t" data-to="s4-state-race-wheels-ticked-lights-up"><span class="grow"><b>Race wheels</b> · on Road<div class="s">Zipp 303 S · Road is left without a wheelset</div></span><span class="k">1 150 km</span></div>
         <div class="t" data-dead="not drawn"><span class="grow"><b>+ New wheelset</b></span></div>
       </div>
     </div>
 </section>
-<section class="scr" id="s4-state-race-wheels-ticked-lights-up" hidden>
+<section class="scr" id="s2-state-rear-wheel-tapped-the-parts-on-tha" hidden>
 <div class="ph"><div class="sb"></div>
-      <div class="hd"><span class="bk" data-dead="behind the sheet">‹ Grizl</span></div>
-      <div class="bd muted"><div class="big">Wheelset</div><div>Grizl's wheels · 8 240 km</div></div>
-      <div class="tb"><span>Due</span><span class="on">Garage</span><span>Rides</span><span>Settings</span></div>
-      <div class="scrim"></div>
-      <div class="sheet">
-        <div class="grab"></div>
-        <div class="stb"><span class="b" aria-label="Cancel" data-to="s2-state-tap-a-wheel-the-wheelset-s-own-pag">✕</span><b>Swap wheelset</b><span class="b pri" aria-label="Done" data-to="s5-state-a-wheelset-swapped-its-page-shows">✓</span></div>
-        <div class="seg"><span class="b on" data-dead="already showing">Wheelset</span><span class="b" data-dead="the front wheels&#x27; list: not drawn">Front</span><span class="b" data-dead="linked before a wheelset is ticked">Rear</span></div>
-        <div class="s">The Grizl's wheels go on the shelf, with their tyres, cassette and rotors.</div>
-        <div class="lbl">On the shelf</div>
-        <div class="t" data-dead="only the race wheels&#x27; move is drawn"><span class="grow"><b>Spare wheelset</b><div class="s">Fulcrum Rapid Red</div></span><span class="k">3 400 km</span></div>
-        <div class="lbl">On another bike</div>
-        <div class="t" data-dead="already ticked"><span class="grow"><b>Race wheels</b> · on Road<div class="s">Zipp 303 S · Road is left without a wheelset</div></span><span class="k">1 150 km</span><span class="ck">✓</span></div>
-        <div class="t" data-dead="not drawn"><span class="grow"><b>+ New wheelset</b></span></div>
+      <div class="hd"><span class="bk" data-to="s2-state-tap-a-wheel-the-wheelset-s-own-pag">‹ Wheelset</span><span class="b" style="margin-left:auto;font-weight:700" data-dead="the menu is linked on the chain&#x27;s page">⋯</span></div>
+      <div class="bd" style="gap:5px">
+        <div><div class="big">Rear wheel</div><div>Grizl's wheels · <b>8 240 km</b></div></div>
+        <div class="t" data-dead="the sealant&#x27;s page: not drawn"><span class="sh">▲</span><span class="grow"><b>Sealant</b><div class="s">Stan's NoTubes</div></span><span class="k">due in 1 month</span>›</div>
+        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Tyre</b><div class="s">Schwalbe G-One R · 40 mm</div></span><span class="k">3 300 km</span>›</div>
+        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Cassette</b><div class="s">SRAM Force XPLR · 10–44</div></span><span class="k">6 400 km</span>›</div>
+        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Rotor</b><div class="s">SRAM Paceline · 160 mm</div></span><span class="k">8 240 km</span>›</div>
+        <div class="t" data-dead="linked on the chain&#x27;s page"><span class="grow">This part's history</span>›</div>
+        <div class="main" data-to="s4-state-rear-picked-one-wheel-with-its-cas">Swap</div>
       </div>
+      <div class="tb"><span data-to="s1-picked-a-c-s-bike-buttons">Due</span><span class="on" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Garage</span><span data-to="s19-rides-list-rides-waiting-for-a-bike-come">Rides</span><span data-to="s12-settings-the-fourth-tab">Settings</span></div>
     </div>
 </section>
 <section class="scr" id="s4-state-rear-picked-one-wheel-with-its-cas" hidden>
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-dead="behind the sheet">‹ Grizl</span></div>
-      <div class="bd muted"><div class="big">Wheelset</div><div>Grizl's wheels · 8 240 km</div></div>
+      <div class="bd muted"><div class="big">Wheelset</div><div>Grizl's wheels · 8 240 km</div></div>
       <div class="tb"><span>Due</span><span class="on">Garage</span><span>Rides</span><span>Settings</span></div>
       <div class="scrim"></div>
       <div class="sheet">
@@ -627,10 +624,29 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
         <div class="seg"><span class="b" data-to="s4-state-a-wheelset-the-shelf-and-other-bik">Wheelset</span><span class="b" data-dead="the front wheels&#x27; list: not drawn">Front</span><span class="b on" data-dead="already showing">Rear</span></div>
         <div class="s">The Grizl's rear wheel goes on the shelf, with its tyre, cassette and rotor. The front stays.</div>
         <div class="lbl">On the shelf</div>
-        <div class="t" data-dead="a single wheel&#x27;s move: not drawn"><span class="grow"><b>Spare wheelset</b> · rear<div class="s">Fulcrum Rapid Red</div></span><span class="k">3 400 km</span></div>
+        <div class="t" data-dead="a single wheel&#x27;s move: not drawn"><span class="grow"><b>Spare wheelset</b> · rear<div class="s">Fulcrum Rapid Red</div></span><span class="k">3 400 km</span></div>
         <div class="lbl">On another bike</div>
-        <div class="t" data-dead="a single wheel&#x27;s move: not drawn"><span class="grow"><b>Race wheels</b> · rear<div class="s">Zipp 303 S · on Road · Road is left without a rear wheel</div></span><span class="k">1 150 km</span></div>
+        <div class="t" data-dead="a single wheel&#x27;s move: not drawn"><span class="grow"><b>Race wheels</b> · rear<div class="s">Zipp 303 S · on Road · Road is left without a rear wheel</div></span><span class="k">1 150 km</span></div>
         <div class="t" data-dead="not drawn"><span class="grow"><b>+ New rear wheel</b></span></div>
+      </div>
+    </div>
+</section>
+<section class="scr" id="s4-state-race-wheels-ticked-lights-up" hidden>
+<div class="ph"><div class="sb"></div>
+      <div class="hd"><span class="bk" data-dead="behind the sheet">‹ Grizl</span></div>
+      <div class="bd muted"><div class="big">Wheelset</div><div>Grizl's wheels · 8 240 km</div></div>
+      <div class="tb"><span>Due</span><span class="on">Garage</span><span>Rides</span><span>Settings</span></div>
+      <div class="scrim"></div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <div class="stb"><span class="b" aria-label="Cancel" data-to="s2-state-tap-a-wheel-the-wheelset-s-own-pag">✕</span><b>Swap wheelset</b><span class="b pri" aria-label="Done" data-to="s5-state-a-wheelset-swapped-its-page-shows">✓</span></div>
+        <div class="seg"><span class="b on" data-dead="already showing">Wheelset</span><span class="b" data-dead="the front wheels&#x27; list: not drawn">Front</span><span class="b" data-dead="linked before a wheelset is ticked">Rear</span></div>
+        <div class="s">The Grizl's wheels go on the shelf, with their tyres, cassette and rotors.</div>
+        <div class="lbl">On the shelf</div>
+        <div class="t" data-dead="only the race wheels&#x27; move is drawn"><span class="grow"><b>Spare wheelset</b><div class="s">Fulcrum Rapid Red</div></span><span class="k">3 400 km</span></div>
+        <div class="lbl">On another bike</div>
+        <div class="t" data-dead="already ticked"><span class="grow"><b>Race wheels</b> · on Road<div class="s">Zipp 303 S · Road is left without a wheelset</div></span><span class="k">1 150 km</span><span class="ck">✓</span></div>
+        <div class="t" data-dead="not drawn"><span class="grow"><b>+ New wheelset</b></span></div>
       </div>
     </div>
 </section>
@@ -638,11 +654,9 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">‹ Grizl</span><span class="b" style="margin-left:auto;font-weight:700" data-dead="the menu is linked on the chain&#x27;s page">⋯</span></div>
       <div class="bd" style="gap:5px">
-        <div class="hl"><div class="big">Wheelset</div><div>Race wheels · <b>1 150 km</b><div class="s">Zipp 303 S</div></div></div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Sealant</b> · rear<div class="s">Stan's NoTubes</div></span><span class="k">1 of 6 months</span>›</div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Tyre</b> · rear<div class="s">Schwalbe G-One RS · 35 mm</div></span><span class="k">1 150 km</span>›</div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Tyre</b> · front<div class="s">Schwalbe G-One RS · 35 mm</div></span><span class="k">1 150 km</span>›</div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Cassette</b><div class="s">SRAM Force XPLR · 10–44</div></span><span class="k">1 150 km</span>›</div>
+        <div class="hl"><div class="big">Wheelset</div><div>Race wheels · <b>1 150 km</b><div class="s">Zipp 303 S</div></div></div>
+        <div class="t" data-dead="the race wheels&#x27; wheel page: not drawn, it is laid out as the Grizl&#x27;s rear wheel"><span class="grow"><b>Rear wheel</b><div class="s">Tyre, cassette, rotor, sealant</div></span>›</div>
+        <div class="t" data-dead="the front wheel&#x27;s page: not drawn"><span class="grow"><b>Front wheel</b><div class="s">Tyre, rotor</div></span>›</div>
         <div class="t" data-dead="linked on the chain&#x27;s page"><span class="grow">This part's history</span>›</div>
         <div class="main" data-to="s4-state-a-wheelset-the-shelf-and-other-bik">Swap</div>
       </div>
@@ -687,7 +701,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="bd" style="gap:7px">
         <div class="seg"><span class="b" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Due 1</span><span class="b" data-to="s2-a-scrolled-on-the-parts-tab-every-part-n">Parts 12</span><span class="b on" data-dead="already showing">Shelf 4</span><span class="b" data-to="s17-history-tab-yours-and-your-shop-s">History</span></div>
         <div class="lbl">Chains</div>
-        <div class="t hl" data-dead="only chain B&#x27;s own screen is drawn"><span class="grow"><b>Chain A</b> · ready<div class="s">waxed today · off the Grizl today</div></span><span class="k">2 140 km</span>›</div>
+        <div class="t hl" data-dead="only chain B&#x27;s own screen is drawn"><span class="grow"><b>Chain A</b> · ready<div class="s">waxed today · off the Grizl today</div></span><span class="k">2 140 km</span>›</div>
         <div class="t hl" data-dead="only chain B&#x27;s own screen is drawn"><span class="grow"><b>Chain C</b> · ready<div class="s">waxed today · off the Grizl 02/09/2026</div></span><span class="k">980 km</span>›</div>
         <div class="t" data-dead="only chain B&#x27;s own screen is drawn"><span class="grow"><b>Chain D</b> · never fitted<div class="s">bought 20/09/2026</div></span><span class="k">0 km</span>›</div>
         <div class="b" data-to="s3-the-wax-session-shelf-tab-several-chains">Log a wax session</div>
@@ -699,7 +713,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-dead="a tap outside the open menu closes it">‹ Grizl</span><span class="b" style="margin-left:auto;font-weight:700;background:var(--g2)" data-dead="a tap outside the open menu closes it">⋯</span></div>
       <div class="bd">
-        <div class="muted"><div class="big">Chain</div><div>SRAM Force · <b>2 140 km</b></div></div>
+        <div class="muted"><div class="big">Chain</div><div>SRAM Force · <b>2 140 km</b></div></div>
         <div class="c muted"><div class="lbl">Wax</div><b>■ 40 km past its wax</b></div>
         <div class="c muted"><div class="lbl">Wear</div><b>■ replace · 0.75% on 28/09/2026</b></div>
         <div class="pair muted" style="margin-top:auto"><span class="b" data-dead="a tap outside the open menu closes it">Other jobs</span><div class="main" data-dead="a tap outside the open menu closes it">Swap</div></div>
@@ -716,7 +730,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-to="s3-a-chain-in-a-rotation-on-the-bike-swap-l">‹ Chain A</span></div>
       <div class="bd" style="gap:6px">
-        <div><div class="big" style="font-size:1.3em">History</div><div class="s">Chain A · "training 1" · SRAM Force · 2 140 km · retired</div></div>
+        <div><div class="big" style="font-size:1.3em">History</div><div class="s">Chain A · "training 1" · SRAM Force · 2 140 km · retired</div></div>
         <div class="lbl">Hot waxes · how long each lasted</div>
         <div class="t"><span class="grow"><b>12/09/2026</b><div class="s">1 wet ride</div></span><span class="k">350 km</span></div>
         <div class="t"><span class="grow"><b>20/08/2026</b><div class="s">2 wet rides</div></span><span class="k">280 km</span></div>
@@ -732,7 +746,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-dead="a tap outside the open menu closes it">‹ Grizl</span><span class="b" style="margin-left:auto;font-weight:700" data-dead="a tap outside the open menu closes it">⋯</span></div>
       <div class="bd">
-        <div class="muted"><div class="big">Chain</div><div>SRAM Force · <b>2 140 km</b></div></div>
+        <div class="muted"><div class="big">Chain</div><div>SRAM Force · <b>2 140 km</b></div></div>
         <div class="c muted"><div class="lbl">Wax</div><b>■ 40 km past its wax</b></div>
         <div class="c muted"><div class="lbl">Wear</div><b>under 0.5% · checked 12/09/2026</b></div>
         <div class="pair" style="margin-top:auto"><span class="b" style="background:var(--g2)" data-dead="a tap outside the open menu closes it">Other jobs</span><div class="main muted" data-dead="a tap outside the open menu closes it">Swap</div></div>
@@ -748,7 +762,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <section class="scr" id="s3m-what-measure-opens-the-marks-of-your-own" hidden>
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk">‹ Grizl</span></div>
-      <div class="bd muted"><div class="big">Chain</div><div>SRAM Force · 2 140 km</div></div>
+      <div class="bd muted"><div class="big">Chain</div><div>SRAM Force · 2 140 km</div></div>
       <div class="tb"><span>Due</span><span class="on">Garage</span><span>Rides</span><span>Settings</span></div>
       <div class="scrim"></div>
       <div class="sheet">
@@ -787,7 +801,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">‹ Grizl</span><span class="b" style="margin-left:auto;font-weight:700" data-dead="the menu is linked on the chain&#x27;s page">⋯</span></div>
       <div class="bd">
-        <div><div class="big">Chain</div><div>SRAM Force · <b>2 140 km</b></div></div>
+        <div><div class="big">Chain</div><div>SRAM Force · <b>2 140 km</b></div></div>
         <div class="c"><div class="lbl">Wax</div><b>■ 40 km past its wax</b><div class="s">wax every 300 km</div></div>
         <div class="c hl"><div class="lbl">Wear</div><b>under 0.5% · checked today</b><div class="s">Park CC-4.2 · replace at 0.75% (SRAM: 0.8%)</div></div>
         <div class="t" data-dead="linked on the chain&#x27;s page"><span class="grow">This part's history</span>›</div>
@@ -814,11 +828,11 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 </section>
 <section class="scr" id="s3r-retire-the-fitted-chain-with-no-new-one" hidden>
 <div class="ph"><div class="sb"></div>
-      <div class="hd">Grizl<span class="s" style="font-weight:400">8 240 km</span><span class="b r" aria-label="Add" data-dead="the Add menu is linked on the Due tab of the bike">+</span></div>
+      <div class="hd">Grizl<span class="s" style="font-weight:400">8 240 km</span><span class="b r" aria-label="Add" data-dead="the Add menu is linked on the Due tab of the bike">+</span></div>
       <div class="bd">
         <div class="seg"><span class="b on" data-dead="already showing">Grizl</span><span class="b" data-dead="another bike&#x27;s screen: not drawn">Road</span><span class="b" data-dead="another bike&#x27;s screen: not drawn">Hardtail</span><span class="b" data-dead="another bike&#x27;s screen: not drawn">Winter</span></div>
         <svg class="bike" viewBox="99 60 1851 1150" role="img" aria-label="bike with no chain"><use href="#frame" class="fr"/><use href="#z-wheel_rear" class="ds" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-wheel_front" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-hub_front" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-fork" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-hub_rear" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-crank" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-chain" class="empty" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-seat" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-headset" data-dead="this area&#x27;s sheet: not drawn"/><use href="#z-cockpit" data-dead="this area&#x27;s sheet: not drawn"/></svg>
-        <div class="c hl"><b>No chain</b><div class="s">Chain A was retired today at 2 140 km. Rides on the Grizl ask which chain you rode.</div></div>
+        <div class="c hl"><b>No chain</b><div class="s">Chain A was retired today at 2 140 km. Rides on the Grizl ask which chain you rode.</div></div>
         <div class="t" data-dead="fitting a chain to an empty spot: not drawn"><span class="grow">Fit a chain</span></div>
       </div>
       <div class="tb"><span data-to="s1-picked-a-c-s-bike-buttons">Due</span><span class="on" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Garage</span><span data-to="s19-rides-list-rides-waiting-for-a-bike-come">Rides</span><span data-to="s12-settings-the-fourth-tab">Settings</span></div>
@@ -857,13 +871,13 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <section class="scr" id="s4-picked-b-the-km-behind-the-chain-chain-b" hidden>
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk" data-dead="behind the sheet">‹ Grizl</span></div>
-      <div class="bd"><div class="big">Chain</div><div>SRAM Force · 2 140 km</div></div>
+      <div class="bd"><div class="big">Chain</div><div>SRAM Force · 2 140 km</div></div>
       <div class="tb"><span>Due</span><span class="on">Garage</span><span>Rides</span><span>Settings</span></div>
       <div class="scrim"></div>
       <div class="sheet">
         <div class="grab"></div>
         <div class="stb"><span class="b" aria-label="Cancel" data-to="s3-a-chain-in-a-rotation-on-the-bike-swap-l">✕</span><b>Swap chain</b><span class="b pri" aria-label="Done" data-to="s5-picked-after-the-chain-page-shows-chain">✓</span></div>
-        <div class="s">Chain A · 2 140 km comes off. Keep it as a spare, or retire it?</div>
+        <div class="s">Chain A · 2 140 km comes off. Keep it as a spare, or retire it?</div>
         <div class="seg"><span class="b on" data-dead="picking is not simulated: the drawn pick stands">Spare</span><span class="b" data-dead="picking is not simulated: the drawn pick stands">Retired</span></div>
         <div class="lbl">On the shelf</div>
         <div class="t" data-dead="already ticked"><span class="grow"><b>Chain B</b> · "training 2"<div class="s">waxed 12/09/2026 · ready</div></span><span class="k">412 km</span><span class="ck">✓</span></div>
@@ -876,15 +890,15 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <section class="scr" id="s16-new-chain-a-step-inside-the-swap-sheet" hidden>
 <div class="ph"><div class="sb"></div>
       <div class="hd"><span class="bk">‹ Grizl</span></div>
-      <div class="bd muted"><div class="big">Chain</div><div>SRAM Force · 2 140 km</div></div>
+      <div class="bd muted"><div class="big">Chain</div><div>SRAM Force · 2 140 km</div></div>
       <div class="tb"><span>Due</span><span class="on">Garage</span><span>Rides</span><span>Settings</span></div>
       <div class="scrim"></div>
       <div class="sheet">
         <div class="grab"></div>
         <div class="stb"><span class="b" aria-label="Back" data-to="s3-swap-the-name-on-each-row-the-chain-that">‹</span><b>New chain</b><span class="b pri" aria-label="Fit" data-dead="a new chain&#x27;s swap is drawn for chain B (section 5)">✓</span></div>
-        <div class="s">Chain A · 2 140 km comes off, to the shelf.</div>
-        <div class="lbl">Make and model</div>
-        <div class="t" data-dead="typing is not simulated"><span class="grow s">optional</span></div>
+        <div class="s">Chain A · 2 140 km comes off, to the shelf.</div>
+        <div class="t" data-dead="the makers list: not drawn yet (BIM.86)"><span class="grow">Make</span><span class="b pop">None ⌃⌄</span></div>
+        <div class="t" data-dead="typing is not simulated"><span class="grow">Model</span><span class="s">optional</span></div>
         <div class="seg"><span class="b on" data-dead="picking is not simulated: the drawn pick stands">New</span><span class="b" data-dead="picking is not simulated: the drawn pick stands">Used</span></div>
         <div class="c s">Waxed, like the Grizl's other chains. A strip &amp; prep job comes with it.</div>
       </div>
@@ -923,7 +937,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="hd"><span class="bk" data-to="s17-history-tab-yours-and-your-shop-s">‹ History</span></div>
       <div class="bd">
         <div><div class="big">Chain swapped</div><div class="s">Grizl · by you</div></div>
-        <div class="t" data-dead="each chain&#x27;s history is linked from chain A&#x27;s page"><span class="grow"><b>OFF · chain A</b> at 2 140 km<div class="s">retired, worn out · its history</div></span>›</div>
+        <div class="t" data-dead="each chain&#x27;s history is linked from chain A&#x27;s page"><span class="grow"><b>OFF · chain A</b> at 2 140 km<div class="s">retired, worn out · its history</div></span>›</div>
         <div class="t" data-dead="each chain&#x27;s history is linked from chain A&#x27;s page"><span class="grow"><b>ON · chain B</b> at 412 km<div class="s">"training 2" · its history</div></span>›</div>
         <div class="c s">The same event is one line in each chain's own history.</div>
         <div class="t" data-dead="changing the date: not drawn"><span class="grow">Date</span><span class="b dp">28/09/2026</span></div>
@@ -965,13 +979,13 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="scrim"></div>
       <div class="sheet" style="top:34px">
         <div class="stb"><span class="b" aria-label="Back" data-to="s16-step-1-what-kind-of-part">‹</span><b>Disc pads</b><span class="b pri" aria-label="Add" data-to="s16-state-added-the-new-part-highlighted-in">✓</span></div>
-        <div class="lbl">Make and model</div>
-        <div class="t" data-dead="typing is not simulated"><span class="grow s">optional</span></div>
+        <div class="t" data-dead="the makers list: not drawn yet (BIM.86)"><span class="grow">Make</span><span class="b pop">None ⌃⌄</span></div>
+        <div class="t" data-dead="typing is not simulated"><span class="grow">Model</span><span class="s">optional</span></div>
         <div class="seg"><span class="b on" data-dead="picking is not simulated: the drawn picks stand">Grizl</span><span class="b" data-dead="picking is not simulated: the drawn picks stand">Shelf</span></div>
         <div class="seg"><span class="b" data-dead="picking is not simulated: the drawn picks stand">Front</span><span class="b on" data-dead="picking is not simulated: the drawn picks stand">Rear</span></div>
-        <div class="t" data-dead="the interval step is in Part settings (section 13)"><span class="grow">Replace every <b>2 000 km</b><div class="s">the usual for resin pads</div></span>›</div>
+        <div class="t" data-dead="the interval step is in Part settings (section 13)"><span class="grow">Replace every <b>2 000 km</b><div class="s">the usual for resin pads</div></span>›</div>
         <div class="t" data-dead="changing the date: not drawn"><span class="grow">Fitted</span><span class="b dp">28/09/2026</span></div>
-        <div class="t" data-dead="typing is not simulated: the drawn value stands"><span class="grow">Km already on it<div class="s">0 when new</div></span><span class="num">0</span><b>km</b></div>
+        <div class="t" data-dead="typing is not simulated: the drawn value stands"><span class="grow">Km already on it</span><span class="b pop">New ⌃⌄</span></div>
       </div>
     </div>
 </section>
@@ -981,9 +995,9 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="bd">
         <div class="seg"><span class="b" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Due 2</span><span class="b on" data-dead="already showing">Parts 13</span><span class="b" data-to="s2-a-scrolled-on-the-shelf-tab">Shelf 4</span><span class="b" data-to="s17-history-tab-yours-and-your-shop-s">History</span></div>
         <div class="t hl" data-dead="the new part&#x27;s page: not drawn"><span class="grow"><b>Disc pads</b> · rear<div class="s">SRAM · resin</div></span><span class="k">0 km</span>›</div>
-        <div class="t" data-dead="linked from the Parts tab of section 2"><span class="grow"><b>Wheelset</b><div class="s">Grizl's wheels · DT Swiss G 1800</div></span><span class="k">8 240 km</span>›</div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Tyre</b> · front<div class="s">Schwalbe G-One R · 40 mm</div></span><span class="k">1 900 km</span>›</div>
-        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Tyre</b> · rear<div class="s">Schwalbe G-One R · 40 mm</div></span><span class="k">3 300 km</span>›</div>
+        <div class="t" data-dead="linked from the Parts tab of section 2"><span class="grow"><b>Wheelset</b><div class="s">Grizl's wheels · DT Swiss G 1800</div></span><span class="k">8 240 km</span>›</div>
+        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Tyre</b> · front<div class="s">Schwalbe G-One R · 40 mm</div></span><span class="k">1 900 km</span>›</div>
+        <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Tyre</b> · rear<div class="s">Schwalbe G-One R · 40 mm</div></span><span class="k">3 300 km</span>›</div>
         <div class="t" data-dead="this part&#x27;s page: not drawn"><span class="grow"><b>Sealant</b> · rear<div class="s">Stan's NoTubes</div></span><span class="k">5 months</span>›</div>
       </div>
       <div class="tb"><span data-to="s1-picked-a-c-s-bike-buttons">Due</span><span class="on" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Garage</span><span data-to="s19-rides-list-rides-waiting-for-a-bike-come">Rides</span><span data-to="s12-settings-the-fourth-tab">Settings</span></div>
@@ -1056,7 +1070,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="bd" style="gap:7px">
         <div><div class="big" style="font-size:1.3em">Sunday gravel</div><div class="s">27/09/2026 · from Strava · 62 km · 2 h 41</div></div>
         <div class="t hl" data-dead="the pop-up is linked on the ride before the move"><span class="grow">Bike</span><span class="b pop">Road ⌃⌄</span></div>
-        <div class="c s">62 km now count on the Road's 9 parts, and came off the Grizl's 12 · the Grizl's chain A is back to 2 078 km</div>
+        <div class="c s">62 km now count on the Road's 9 parts, and came off the Grizl's 12 · the Grizl's chain A is back to 2 078 km</div>
         <div class="seg"><span class="b on" data-dead="picking is not simulated: the drawn pick stands">Outdoor</span><span class="b" data-dead="picking is not simulated: the drawn pick stands">Indoor</span></div>
         <div class="t" data-dead="switches are not simulated"><span class="grow">Wet ride<div class="s">a mark on the chain, no extra km</div></span><span class="sw off"></span></div>
       </div>
