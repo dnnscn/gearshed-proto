@@ -129,6 +129,8 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 .bike use.hint{stroke:#228be6 !important}
 .start{display:block;border:2px solid var(--ink);border-radius:12px;padding:12px 16px;margin:12px 0;font-weight:700;color:var(--ink);text-decoration:none;min-height:44px;box-sizing:border-box}
 .start span{display:block;font-weight:400;font-size:13px;color:#444}
+.task .goal{font-size:20px;font-weight:700}
+#again[hidden]{display:none}
 #again{display:block;margin:16px auto;min-height:44px;padding:0 20px;border:2px solid var(--ink);border-radius:10px;background:#fff;font:600 15px -apple-system,system-ui,sans-serif}
 /* a saved row lights up as its screen opens, then settles on the drawn grey ring: "highlighted for a moment" */
 .scr .hl{animation:hl 2s ease-out}
@@ -163,20 +165,29 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
   <li>When you are done, press Control-C in the first Terminal window. Nothing is put online.</li>
 </ol>
 
+<h2>For the rider test: add <code>?test</code> to the address</h2>
+<p><code>https://dnnscn.github.io/gearshed-proto/?test</code>, or on the Mac <code>…/gearshed-lofi.mockup.html?test</code>. Added 30/09/2026, your ask on <a href="nimbalyst://BIM.71">BIM.71</a>: the rider should know where to start and what to do.</p>
+<ul>
+  <li><b>A short intro, then a card before each task:</b> who the rider is, the facts the screens already show (a waxed chain, three chains, one set of wheels), and the goal. Never which button to press. <b>Start</b> opens the task's first screen; <b>Next task</b>, under the phone, goes to the next card.</li>
+  <li><b>No blue flash.</b> It would show the rider where to tap. Figma's own advice for its version of the flash, <a href="https://help.figma.com/hc/en-us/articles/19790203466263-Test-your-prototypes-with-UserTesting">Test your prototypes with UserTesting</a>: <i>"To avoid confusing contributors not familiar with prototypes, deselect these options: Show hotspot hints on click"</i>.</li>
+  <li><b>Picks, switches, ticks and the chain count respond</b> (Wax or Oil, More than one wheelset, the ticks in Log a session). The next screens stay as drawn, which is why each card gives facts that match them. Typing, dates and pop-up menus still do not respond. Each task starts from the screens as drawn.</li>
+  <li><b>Pick the tasks with the address:</b> <code>?test=1,15,9</code> runs tasks 1, 15 and 9, in that order, numbered 1 to 3. The tasks and their wording are drafts: step 8, the test plan, picks 3 to 5 and fixes the wording. Each task's text is its path's <code>task</code> in <code>lofi/links.json</code>.</li>
+</ul>
+
 <h2>How it works</h2>
 <ul>
-  <li>Tap something linked and the next screen opens. Tap anything else and every linked spot on the screen flashes blue for 0.6 s: it shows what can be tapped, and where a path stops.</li>
+  <li>Tap something linked and the next screen opens. Tap anything else and every linked spot on the screen flashes blue for 0.6 s: it shows what can be tapped, and where a path stops. Not in the rider test, above.</li>
   <li><b>Start again</b>, under the phone, goes back to the two ways in. The browser's back button works, and every screen has its own address.</li>
   <li><b>Not simulated:</b> typing, ticking, switches, scrolling and swipes. The values drawn on each screen stand. A long screen shows its top part only. To close a sheet, tap its ✕, ‹, ✓ or Save: swiping it down does nothing here. Shaking the phone to undo is not simulated either.</li>
   <li><b>An open menu closes on any tap outside it</b>, as on an iPhone: the tap does nothing else.</li>
-  <li><b>New rider stops on the first garage.</b> Every tab from there opens Wouter's app, a month in: his four bikes, with makes, models and km typed in. A new rider's own screens after the first bike are not drawn.</li>
+  <li><b>New rider stops on the first garage</b>, its Parts tab and the <i>Your parts</i> page (path 15). Every tab of the bar from there opens Wouter's app, a month in: his four bikes, with makes, models and km typed in. A new rider's other screens after the first bike are not drawn.</li>
   <li><b>Numbers can disagree between screens.</b> The screens were drawn at different moments of Wouter's month, so a job you just logged can still show as due on the next screen. The paths are tested here, not the data.</li>
   <li><b>Undecided parts are hidden</b>: the dashed boxes of the wireframes. A rider sees only what is decided.</li>
 </ul>
 
-<h2>The 14 main paths</h2>
-<p class="meta">The 13 first-version jobs of <code>09-structure.md</code> §3, plus the first run. <i>Give your shop access</i> is v1, so it is left out. Counted from where each rider starts: New rider on Welcome, Wouter on Due, where the app opens. <b>Taps to its screen</b> stops where §3's count stops; §3 counted from a Garage landing, before the app opened on Due. <b>Taps to done</b> adds the taps that finish the job. Counts that differ are not forced to match: the difference goes to the tap recount (<a href="nimbalyst://BIM.62">BIM.62</a>).</p>
-<table class="trace"><tr><th>#</th><th>Path</th><th>Starts as</th><th>Taps to its screen</th><th>Taps to done</th><th>Sitemap</th></tr><tr><td>1</td><td>First run: Welcome, first bike, the garage</td><td>New rider</td><td>4</td><td>4</td><td>—</td></tr><tr><td>2</td><td>See this bike&#x27;s state</td><td>Wouter, a month in</td><td>1</td><td>1</td><td>0</td></tr><tr><td>3</td><td>See what&#x27;s due across all bikes</td><td>Wouter, a month in</td><td>0</td><td>0</td><td>1</td></tr><tr><td>4</td><td>Log a re-wax</td><td>Wouter, a month in</td><td>3</td><td>4</td><td>2</td></tr><tr><td>5</td><td>Log five jobs in one sitting</td><td>Wouter, a month in</td><td>1</td><td>2</td><td>2</td></tr><tr><td>6</td><td>Export the record</td><td>Wouter, a month in</td><td>3</td><td>3</td><td>2</td></tr><tr><td>7</td><td>Type in a chain-checker reading</td><td>Wouter, a month in</td><td>3</td><td>4</td><td>2</td></tr><tr><td>8</td><td>Change the notification budget</td><td>Wouter, a month in</td><td>2</td><td>3</td><td>2</td></tr><tr><td>9</td><td>Swap a chain at the bench</td><td>Wouter, a month in</td><td>3</td><td>3</td><td>3</td></tr><tr><td>10</td><td>Move a wheelset to another bike</td><td>Wouter, a month in</td><td>5</td><td>5</td><td>3</td></tr><tr><td>11</td><td>Fix a ride on the wrong bike</td><td>Wouter, a month in</td><td>4</td><td>4</td><td>3</td></tr><tr><td>12</td><td>Set a part&#x27;s interval, or who services it</td><td>Wouter, a month in</td><td>4</td><td>4</td><td>3</td></tr><tr><td>13</td><td>Type in a ride by hand</td><td>Wouter, a month in</td><td>2</td><td>3</td><td>2</td></tr><tr><td>14</td><td>Add a part to a bike you already have</td><td>Wouter, a month in</td><td>3</td><td>5</td><td>2</td></tr></table>
+<h2>The 15 main paths</h2>
+<p class="meta">The 13 first-version jobs of <code>09-structure.md</code> §3, plus the first run, and since 30/09/2026 adding makes, models and km to the new bike's parts (your review on <a href="nimbalyst://BIM.71">BIM.71</a>). <i>Give your shop access</i> is v1, so it is left out. Counted from where each rider starts: New rider on Welcome, Wouter on Due, where the app opens. <b>Taps to its screen</b> stops where §3's count stops; §3 counted from a Garage landing, before the app opened on Due. <b>Taps to done</b> adds the taps that finish the job. Counts that differ are not forced to match: the difference goes to the tap recount (<a href="nimbalyst://BIM.62">BIM.62</a>).</p>
+<table class="trace"><tr><th>#</th><th>Path</th><th>Starts as</th><th>Taps to its screen</th><th>Taps to done</th><th>Sitemap</th></tr><tr><td>1</td><td>First run: Welcome, first bike, the garage</td><td>New rider</td><td>4</td><td>4</td><td>—</td></tr><tr><td>2</td><td>See this bike&#x27;s state</td><td>Wouter, a month in</td><td>1</td><td>1</td><td>0</td></tr><tr><td>3</td><td>See what&#x27;s due across all bikes</td><td>Wouter, a month in</td><td>0</td><td>0</td><td>1</td></tr><tr><td>4</td><td>Log a re-wax</td><td>Wouter, a month in</td><td>3</td><td>4</td><td>2</td></tr><tr><td>5</td><td>Log five jobs in one sitting</td><td>Wouter, a month in</td><td>1</td><td>2</td><td>2</td></tr><tr><td>6</td><td>Export the record</td><td>Wouter, a month in</td><td>3</td><td>3</td><td>2</td></tr><tr><td>7</td><td>Type in a chain-checker reading</td><td>Wouter, a month in</td><td>3</td><td>4</td><td>2</td></tr><tr><td>8</td><td>Change the notification budget</td><td>Wouter, a month in</td><td>2</td><td>3</td><td>2</td></tr><tr><td>9</td><td>Swap a chain at the bench</td><td>Wouter, a month in</td><td>3</td><td>3</td><td>3</td></tr><tr><td>10</td><td>Move a wheelset to another bike</td><td>Wouter, a month in</td><td>5</td><td>5</td><td>3</td></tr><tr><td>11</td><td>Fix a ride on the wrong bike</td><td>Wouter, a month in</td><td>4</td><td>4</td><td>3</td></tr><tr><td>12</td><td>Set a part&#x27;s interval, or who services it</td><td>Wouter, a month in</td><td>4</td><td>4</td><td>3</td></tr><tr><td>13</td><td>Type in a ride by hand</td><td>Wouter, a month in</td><td>2</td><td>3</td><td>2</td></tr><tr><td>14</td><td>Add a part to a bike you already have</td><td>Wouter, a month in</td><td>3</td><td>5</td><td>2</td></tr><tr><td>15</td><td>Add makes, models and km to the new bike&#x27;s parts</td><td>New rider</td><td>6</td><td>7</td><td>—</td></tr></table>
 
 <h2>Who this design assumes the rider is</h2>
 <p><b>Wouter Claes, who fixes his own bikes</b> (<code>02-personas.md</code> §1; the person is fiction built from the rider corpus, his needs are KNOWN from it). Four bikes: a trail mountain bike, a hardtail, a gravel bike with two wheelsets, a road bike. Two to three waxed chains per bike, swapped in rotation (<code>reddit[2]#c39</code>, <code>reddit[2]#c45</code>). He does every job himself except the fork and damper rebuild, which goes to his shop. His kilometres are in Strava or Garmin Connect today. The screens assume his words: chain, cassette, sealant, wax, rotor, chain checker. The New rider path assumes the same kind of rider: a gravel bike, a waxed rotation of three chains.</p>
@@ -208,6 +219,8 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
   <tr><td>Notifications: when a part is due, push on, email off (your call 2, BIM.69)</td><td>Section 22 now shows it; path 8 picks the digest</td></tr>
   <tr><td>A wheel area opens its sheet, <i>Swap wheelset</i> first (section 2's tap rule)</td><td>Drawn as a new phone in section 2, for path 10</td></tr>
   <tr><td>Status is a shape and a number, not colour alone (<code>08-flows.md</code> §4)</td><td>Unchanged. The blue flash is the only colour, and it only marks what can be tapped</td></tr>
+  <tr><td>Your review of 30/09/2026 on <a href="nimbalyst://BIM.71">BIM.71</a>: the first garage shows the kit's parts; one page for their makes, models and km (your picks B and yes)</td><td>The first garage has <i>Due 1 · Parts 11 · Shelf 2 · History</i> and opens on Due. <i>Parts 11</i> lists the 11 parts; <i>Add makes, models and km</i> at its top opens <i>Your parts</i>; Save shows the changed rows. Path 15. The wireframes' section 2 has the reasons, and why the row sits on the Parts tab only</td></tr>
+  <tr><td>The rider test gives facts and a goal, never the steps; no hint shows where to tap (course C4, usability studies; Figma's advice above)</td><td><code>?test</code>: the cards, no flash, and choices that respond. <code>check-lofi.py</code> checks all of it</td></tr>
   <tr><td>Tap counts: the real count next to the sitemap's, never forced (spec §5)</td><td>The paths table above; the differences are a comment on <a href="nimbalyst://BIM.62">BIM.62</a></td></tr>
 </table>
 
@@ -216,6 +229,112 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <h1>Start as</h1>
 <a class="start" href="#s11-b-start-without-an-account">New rider<span>Welcome · no account, no bikes yet</span></a><a class="start" href="#s1-picked-a-c-s-bike-buttons">Wouter, a month in<span>Four bikes · the app opens on Due</span></a>
 <p><a href="#cover">What this is, and how it works</a></p>
+</section>
+<section class="scr doc" id="intro" hidden>
+<h1>Thank you for trying this</h1>
+<p>This is a sketch of an app for looking after your bikes. It is grey on purpose: the colours come later.</p>
+<ul>
+  <li><b>We are testing the app, not you.</b> If something is unclear, that is exactly what we want to find.</li>
+  <li><b>Please think out loud:</b> say what you look at, what you expect to happen, and what you would do next.</li>
+  <li><b>It is a sketch.</b> Some buttons respond and some do not. If nothing happens, say what you expected.</li>
+  <li><b>Each task starts on a card like this one.</b> When you think you are done, or you want to stop, tap <b>Next task</b> under the phone.</li>
+</ul>
+<p><a class="start" id="first" href="#">Start the first task</a></p>
+</section>
+<section class="scr doc task" id="task-1" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You just bought a new gravel bike, and this is the first time you open the app. You wax the chain and rotate three chains. The bike has one set of wheels.</p>
+<p class="goal">Set up the app for your new bike.</p>
+<a class="start" href="#s11-b-start-without-an-account">Start</a>
+</section>
+<section class="scr doc task" id="task-2" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl.</p>
+<p class="goal">Find out how your Grizl, your gravel bike, is doing. Does anything on it need attention?</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-3" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl.</p>
+<p class="goal">Find out which jobs are waiting, on any of your four bikes.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-4" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. Last night you hot-waxed chains A and C of the Grizl together, in one pot. Both were waiting on the shelf.</p>
+<p class="goal">Record this in the app.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-5" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. On 28/09/2026 you worked on the Grizl: you re-waxed chain A, refreshed the tyre sealant and fitted new rear brake pads.</p>
+<p class="goal">Record all three jobs in the app.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-6" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. You are selling the Grizl. The buyer wants to see everything that was ever done to it.</p>
+<p class="goal">Send the buyer that record from the app.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-7" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. You just put your chain checker on chain A of the Grizl. It does not drop in at the 0.5% mark.</p>
+<p class="goal">Put this result in the app.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-8" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. The app warns you every time a part is due. That is too often for you.</p>
+<p class="goal">Make the app warn you at most once a day.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-9" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. You are at your workbench. Chain A on the Grizl needs wax, so you take it off and put on chain B, which is waxed and ready.</p>
+<p class="goal">Record the change in the app.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-10" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. Your race wheels are on your Road bike. For a gravel race tomorrow you move them to the Grizl.</p>
+<p class="goal">Record the move in the app.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-11" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. The app put your ride “Sunday gravel” on the Grizl, but you rode it on your Road bike.</p>
+<p class="goal">Put the ride on the right bike.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-12" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. You find that chain A on the Grizl needs wax sooner than the app says.</p>
+<p class="goal">Find where you would change how often the app asks for it.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-13" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. On 28/09/2026 you rode the Grizl for 42 km, 1 h 45, outside. Your bike computer&#x27;s battery was dead, so the ride was not recorded.</p>
+<p class="goal">Add the ride to the app yourself.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-14" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. The app does not know about the Grizl&#x27;s rear brake pads yet. You fitted new ones on 28/09/2026.</p>
+<p class="goal">Add them to the Grizl in the app.</p>
+<a class="start" href="#s1-picked-a-c-s-bike-buttons">Start</a>
+</section>
+<section class="scr doc task" id="task-15" hidden>
+<p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
+<p>You just bought a new gravel bike, and this is the first time you open the app. You wax the chain and rotate three chains. The bike has one set of wheels. Its chain is a SRAM Rival.</p>
+<p class="goal">Set up the app for your new bike. Then find where you would note which chain it has.</p>
+<a class="start" href="#s11-b-start-without-an-account">Start</a>
+</section>
+<section class="scr doc" id="thanks" hidden>
+
+<h1>That was the last task</h1>
+<p>Thank you. You can put the phone down now.</p>
 </section>
 <section class="scr" id="s11-b-start-without-an-account" hidden>
 <div class="ph"><div class="sb"></div>
@@ -374,7 +493,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="hd">Gravel bike<span class="s" style="font-weight:400">0 km</span><span class="b r" aria-label="Add" data-dead="adding another bike is not linked from here">+</span></div>
       <div class="bd">
         <svg class="bike" viewBox="99 60 1851 1150" role="img" aria-label="bike"><use href="#frame" class="fr"/><use href="#z-wheel_rear" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-wheel_front" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-hub_front" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-fork" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-hub_rear" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-crank" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-chain" class="ds" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-seat" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-headset" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/><use href="#z-cockpit" data-dead="the areas&#x27; sheets are linked on Wouter&#x27;s Garage"/></svg>
-        <div class="c"><b>2 spare chains are on your shelf.</b><div class="s">They count no km until you fit one.</div></div>
+        <div class="seg"><span class="b on" data-dead="already showing">Due 1</span><span class="b" data-to="s2-state-the-first-bike-s-parts-tab-what-th">Parts 11</span><span class="b" data-dead="the first bike&#x27;s shelf: not drawn">Shelf 2</span><span class="b" data-dead="the first bike&#x27;s history: not drawn">History</span></div>
         <div class="t" data-dead="the job&#x27;s page: not drawn"><span class="sh">▲</span><span class="grow"><b>Strip &amp; prep</b> the new chain<div class="s">before its first wax</div></span>›</div>
         <div class="t" data-to="s22-state-the-phone-asks-once-allow-notifica"><span class="grow"><b>Warn me when a part is due</b><div class="s">your phone asks you once</div></span></div>
         <div class="t" data-to="s12-b-only-no-account-yet"><span class="grow"><b>Save your garage to an account</b><div class="s">so a new phone doesn't lose it</div></span>›</div>
@@ -407,6 +526,55 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
         <div class="s">Notifications may include alerts, sounds and icon badges.</div>
         <div class="pair"><span class="b" data-to="s2-state-just-added-the-first-bike">Don't Allow</span><span class="b" data-to="s2-state-just-added-the-first-bike">Allow</span></div>
       </div>
+    </div>
+</section>
+<section class="scr" id="s2-state-the-first-bike-s-parts-tab-what-th" hidden>
+<div class="ph"><div class="sb"></div>
+      <div class="hd">Gravel bike<span class="b r" aria-label="Add" data-dead="adding another bike is not linked from here">+</span></div>
+      <div class="bd" style="gap:7px">
+        <div class="seg"><span class="b" data-to="s2-state-just-added-the-first-bike">Due 1</span><span class="b on" data-dead="already showing">Parts 11</span><span class="b" data-dead="the first bike&#x27;s shelf: not drawn">Shelf 2</span><span class="b" data-dead="the first bike&#x27;s history: not drawn">History</span></div>
+        <div class="t" data-to="s2-your-parts-make-model-and-km-for-every-p"><span class="grow"><b>Add makes, models and km</b><div class="s">all 11 parts on one page</div></span>›</div>
+        <div class="lbl">Drivetrain</div>
+        <div class="t" data-dead="a part&#x27;s page: not drawn for the first bike"><span class="sh">▲</span><span class="grow"><b>Chain A</b><div class="s">make and model not added yet</div></span><span class="k">0 km</span>›</div>
+        <div class="t" data-dead="a part&#x27;s page: not drawn for the first bike"><span class="grow"><b>Cassette</b><div class="s">make and model not added yet</div></span><span class="k">0 km</span>›</div>
+        <div class="t" data-dead="a part&#x27;s page: not drawn for the first bike"><span class="grow"><b>Chainring</b><div class="s">make and model not added yet</div></span><span class="k">0 km</span>›</div>
+        <div class="t" data-dead="a part&#x27;s page: not drawn for the first bike"><span class="grow"><b>Bottom bracket</b><div class="s">make and model not added yet</div></span><span class="k">0 km</span>›</div>
+        <div class="s center">↓ 7 more parts, down to the headset</div>
+      </div>
+      <div class="tb"><span data-to="s1-picked-a-c-s-bike-buttons">Due</span><span class="on" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Garage</span><span data-to="s19-rides-list-rides-waiting-for-a-bike-come">Rides</span><span data-to="s12-settings-the-fourth-tab">Settings</span></div>
+    </div>
+</section>
+<section class="scr" id="s2-your-parts-make-model-and-km-for-every-p" hidden>
+<div class="ph"><div class="sb"></div>
+      <div class="stb" style="padding:4px 12px;min-height:52px"><span class="b" aria-label="Cancel" data-to="s2-state-the-first-bike-s-parts-tab-what-th">✕</span><b>Your parts</b><span class="b pri" style="font-size:.87em" data-to="s2-state-saved-the-parts-tab-shows-what-you">Save</span></div>
+      <div class="bd" style="gap:6px">
+        <div class="s">Gravel bike · every row is optional</div>
+        <div class="lbl">Chain A</div>
+        <div class="t" data-dead="the makers list: not drawn"><span class="grow">Make</span><span class="b pop">None ⌃⌄</span></div>
+        <div class="t" data-dead="typing is not simulated: the drawn value stands"><span class="grow">Model</span><span class="s">optional</span></div>
+        <div class="t" data-dead="the km pop-up is drawn in section 8"><span class="grow">Km already on it</span><span class="b pop">New ⌃⌄</span></div>
+        <div class="lbl">Cassette</div>
+        <div class="t" data-dead="the makers list: not drawn"><span class="grow">Make</span><span class="b pop">None ⌃⌄</span></div>
+        <div class="t" data-dead="typing is not simulated: the drawn value stands"><span class="grow">Model</span><span class="s">optional</span></div>
+        <div class="t" data-dead="the km pop-up is drawn in section 8"><span class="grow">Km already on it</span><span class="b pop">New ⌃⌄</span></div>
+        <div class="s center">↓ 9 more parts, the same three rows each</div>
+      </div>
+    </div>
+</section>
+<section class="scr" id="s2-state-saved-the-parts-tab-shows-what-you" hidden>
+<div class="ph"><div class="sb"></div>
+      <div class="hd">Gravel bike<span class="b r" aria-label="Add" data-dead="adding another bike is not linked from here">+</span></div>
+      <div class="bd" style="gap:7px">
+        <div class="seg"><span class="b" data-to="s2-state-just-added-the-first-bike">Due 1</span><span class="b on" data-dead="already showing">Parts 11</span><span class="b" data-dead="the first bike&#x27;s shelf: not drawn">Shelf 2</span><span class="b" data-dead="the first bike&#x27;s history: not drawn">History</span></div>
+        <div class="t" data-to="s2-your-parts-make-model-and-km-for-every-p"><span class="grow"><b>Add makes, models and km</b><div class="s">9 parts without a make</div></span>›</div>
+        <div class="lbl">Drivetrain</div>
+        <div class="t hl" data-dead="a part&#x27;s page: not drawn for the first bike"><span class="sh">▲</span><span class="grow"><b>Chain A</b><div class="s">SRAM Rival</div></span><span class="k">0 km</span>›</div>
+        <div class="t hl" data-dead="a part&#x27;s page: not drawn for the first bike"><span class="grow"><b>Cassette</b><div class="s">SRAM</div></span><span class="k">0 km</span>›</div>
+        <div class="t" data-dead="a part&#x27;s page: not drawn for the first bike"><span class="grow"><b>Chainring</b><div class="s">make and model not added yet</div></span><span class="k">0 km</span>›</div>
+        <div class="t" data-dead="a part&#x27;s page: not drawn for the first bike"><span class="grow"><b>Bottom bracket</b><div class="s">make and model not added yet</div></span><span class="k">0 km</span>›</div>
+        <div class="s center">↓ 7 more parts, down to the headset</div>
+      </div>
+      <div class="tb"><span data-to="s1-picked-a-c-s-bike-buttons">Due</span><span class="on" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Garage</span><span data-to="s19-rides-list-rides-waiting-for-a-bike-come">Rides</span><span data-to="s12-settings-the-fourth-tab">Settings</span></div>
     </div>
 </section>
 <section class="scr" id="s3-a-chain-in-a-rotation-on-the-bike-swap-l" hidden>
@@ -1199,14 +1367,45 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 <button id="again" type="button">Start again</button>
 <script>
 const SEL = '.b, .t, .main, .bk, .pill, .tb > span, use[href^="#z-"]';
+// ?test is the rider test: a card before each task, no blue flash, and picks, switches and ticks respond.
+// ?test=1,15,9 runs those paths' tasks, in that order; plain ?test runs all of them.
+const Q = new URLSearchParams(location.search), TEST = Q.has('test');
+const ALL = [...document.querySelectorAll('.task')].map(s => +s.id.slice(5));
+let ORDER = (Q.get('test') || '').split(',').map(Number).filter(n => ALL.includes(n));
+if (!ORDER.length) ORDER = ALL;
+const CHOICE = /^(picking|switches|switching|ticking) (is|are) not simulated/;
+const again = document.getElementById('again');
 function show() {
   let want = location.hash.slice(1);
   try { want = decodeURIComponent(want); } catch (e) { want = ''; }  // a malformed address shows the cover
-  const el = (want && document.querySelector('.scr#' + CSS.escape(want))) || document.getElementById('cover');
+  let el = want && document.querySelector('.scr#' + CSS.escape(want));
+  if (TEST && (!el || el.id === 'cover' || el.id === 'start')) el = document.getElementById('intro');
+  el = el || document.getElementById('cover');
   document.querySelectorAll('.scr').forEach(s => { s.hidden = s !== el; });
+  if (el.classList.contains('task')) {
+    el.querySelector('.n').textContent = ORDER.indexOf(+el.id.slice(5)) + 1;
+    sessionStorage.setItem('task', el.id.slice(5));
+  }
+  again.hidden = TEST && el.classList.contains('doc');
   // a phone is 644 px tall; under Safari's toolbars shrink it to fit the screen, never grow it
   el.style.zoom = el.classList.contains('doc') ? '' : Math.min(1, (innerHeight - 14) / 644);
   scrollTo(0, 0);
+}
+function choose(t, row) {
+  const seg = t.closest('.seg > .b, .chips > .b');
+  if (seg) { for (const b of seg.parentElement.children) b.classList.toggle('on', b === seg); return; }
+  const step = t.closest('.stp .b');
+  if (step) {
+    const n = step.closest('.stp').previousElementSibling;
+    n.textContent = Math.max(1, +n.textContent + (step.getAttribute('aria-label') === 'More' ? 1 : -1));
+    return;
+  }
+  if (t.closest('.pop')) return;
+  // a switch: the switch itself, or its row when the row holds nothing else to tap
+  const sw = t.closest('.sw') || (row.querySelectorAll('.sw').length === 1 && !row.querySelector('.b') && row.querySelector('.sw'));
+  if (sw) { sw.classList.toggle('off'); return; }
+  const rd = row.querySelector('.rd');
+  if (rd) { rd.classList.toggle('on'); rd.textContent = rd.classList.contains('on') ? '✓' : ''; }
 }
 function tap(e) {
   const ph = e.target.closest('.ph');
@@ -1217,13 +1416,25 @@ function tap(e) {
   if (el && ph.contains(el) && el.dataset.to) { location.hash = el.dataset.to; return; }
   // an open menu: any other tap only closes it, as on an iPhone
   if (e.currentTarget.dataset.outside) { location.hash = e.currentTarget.dataset.outside; return; }
+  if (TEST) {  // no flash: it would show the rider where to tap
+    if (el && ph.contains(el) && CHOICE.test(el.dataset.dead || '')) choose(e.target, el);
+    return;
+  }
   const on = ph.querySelectorAll('[data-to]');
   on.forEach(x => x.classList.add('hint'));
   setTimeout(() => on.forEach(x => x.classList.remove('hint')), 600);
 }
 // on each screen, not on document: iOS Safari sends taps on plain elements only to a listener below <body>
 document.querySelectorAll('.scr').forEach(s => s.addEventListener('click', tap));
-document.getElementById('again').addEventListener('click', () => { location.hash = 'start'; });
+document.querySelectorAll('.task .of').forEach(s => { s.textContent = ORDER.length; });
+document.getElementById('first').href = '#task-' + ORDER[0];
+if (TEST) again.textContent = 'Next task';
+again.addEventListener('click', () => {
+  if (!TEST) { location.hash = 'start'; return; }
+  const next = ORDER[ORDER.indexOf(+sessionStorage.getItem('task')) + 1];
+  history.replaceState(null, '', '#' + (next ? 'task-' + next : 'thanks'));
+  location.reload();  // a fresh page: every pick, switch and tick back as drawn
+});
 addEventListener('hashchange', show);
 show();
 </script>
