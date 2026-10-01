@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=364">
 <title>GearShed — the clickable version</title>
 <style>
-  :root{--ink:#1e1e1e;--g1:#efefef;--g2:#d6d6d6;--g3:#8c8c8c;--acc:#007aff}
+  :root{--ink:#1e1e1e;--g1:#efefef;--g2:#d6d6d6;--g3:#8c8c8c}
   body{font:14px/1.45 -apple-system,system-ui,sans-serif;color:var(--ink);background:#fff;margin:0;padding:32px 40px 96px}
   h1{font-size:28px;margin:0 0 6px}
   h2{font-size:20px;margin:56px 0 4px;padding-top:16px;border-top:2px solid var(--ink)}
@@ -94,7 +94,7 @@
   .rd{border-radius:50%;padding:0;font-size:.8em}
   /* ticked = filled circle; a pop-up button on a row's trailing edge (Apple HIG, toggles and pop-up buttons, 28/09/2026) */
   .rd.on{background:var(--ink);color:#fff}
-  .pop{border:0;padding:0 2px;font-size:.87em;white-space:nowrap;color:var(--acc);font-weight:400;display:inline-flex;align-items:center;gap:4px} /* a value you can change: the accent colour, as iOS draws it (01/10/2026) */
+  .pop{border:0;padding:0 2px;font-size:.87em;white-space:nowrap;font-weight:400;display:inline-flex;align-items:center;gap:4px} /* a value you can change: value + up-down chevron, as iOS draws it; grey only, no accent colour in wireframes (Dennis, 01/10/2026) */
   .nav{border:0;padding:0 2px;background:transparent;font-size:.87em;white-space:nowrap;color:#6e6e73;font-weight:400} /* a value that opens a next step: grey and ›, no border, as iOS draws it */
   .num{font-size:1.294em;font-weight:700;font-variant-numeric:tabular-nums}
   .col{flex-direction:column;align-items:stretch;gap:6px}
@@ -162,7 +162,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 </defs></svg>
 <section class="scr doc" id="cover" hidden>
 <h1>GearShed — the clickable version</h1>
-<p class="meta">Design step 7, built 28/09/2026 from the approved wireframes (<code>gearshed-wireframes.mockup.html</code>) and <code>lofi/links.json</code> by <code>lofi/build.py</code>. Grey on purpose: this tests whether the paths work, not how the app looks. One colour: blue marks a value you can tap to change, as iOS colours it (01/10/2026).</p>
+<p class="meta">Design step 7, built 28/09/2026 from the approved wireframes (<code>gearshed-wireframes.mockup.html</code>) and <code>lofi/links.json</code> by <code>lofi/build.py</code>. Grey on purpose: this tests whether the paths work, not how the app looks.</p>
 <p><a class="start" href="#start">Start tapping<span>Pick New rider or Wouter</span></a></p>
 
 <h2>Open it on your phone</h2>
