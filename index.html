@@ -269,7 +269,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
 </section>
 <section class="scr doc task" id="task-4" hidden>
 <p class="meta">Task <span class="n"></span> of <span class="of"></span></p>
-<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. Last night you hot-waxed chains A and C of the Grizl together, in one pot. Both were waiting on the shelf.</p>
+<p>You are Wouter. You have four bikes and do your own repairs, and the app already knows all four. Your gravel bike is called the Grizl. Last night you hot-waxed chains A and C of the Grizl together, in one pot.</p>
 <p class="goal">Record this in the app.</p>
 <a class="start" href="#s1s-due-select-in-the-bar">Start</a>
 </section>
@@ -450,7 +450,7 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="tb"><span class="on" data-dead="a tap outside the open menu closes it">Due</span><span data-dead="a tap outside the open menu closes it">Garage</span><span data-dead="a tap outside the open menu closes it">Rides</span><span data-dead="a tap outside the open menu closes it">Settings</span></div>
       <div class="menu" style="right:97px;top:79px;width:230px;overflow:visible;box-shadow:0 8px 24px rgba(0,0,0,.22);border-radius:18px"><span aria-hidden="true" style="position:absolute;right:-9px;top:115px;width:14px;height:14px;background:#fff;border-right:2px solid var(--ink);border-top:2px solid var(--ink);transform:rotate(45deg)"></span>
         <div class="t" data-to="s4-from-due-swap-opens-the-sheet-over-due"><span class="grow"><b>Swap chain…</b></span></div>
-        <div class="t" data-dead="the wax session from Due is drawn in section 3, not linked yet"><span class="grow"><b>Full hot wax</b></span></div>
+        <div class="t" data-to="s3g-grizl-pot-from-due-chain-a-ticked"><span class="grow"><b>Full hot wax</b></span></div>
         <div class="t" data-dead="logs at once: not drawn"><span class="grow"><b>Drip-wax top-up</b></span></div>
         <div class="t" data-dead="the Swap sheet at + New chain: not linked from here"><span class="grow"><b>Replace chain…</b></span></div>
       </div>
@@ -747,6 +747,24 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       <div class="tb"><span class="on" data-to="s1s-due-select-in-the-bar">Due</span><span data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Garage</span><span data-to="s19-rides-list-rides-waiting-for-a-bike-come">Rides</span><span data-to="s12-settings-the-fourth-tab">Settings</span></div>
     </div>
 </section>
+<section class="scr" id="s3g-grizl-pot-from-due-chain-a-ticked" hidden>
+<div class="ph"><div class="sb"></div>
+      <div class="hd">Due<span class="s" style="font-weight:400">4 jobs</span></div>
+      <div class="bd"></div>
+      <div class="tb"><span class="on">Due</span><span>Garage</span><span>Rides</span><span>Settings</span></div>
+      <div class="scrim"></div>
+      <div class="sheet" style="top:40px">
+        <div class="grab"></div>
+        <div class="stb"><span class="b" aria-label="Cancel" data-to="s1-picked-a-c-s-bike-buttons">✕</span><b>Wax session</b><span class="b pri" data-dead="saving chain A alone: not drawn, the saved state is drawn with chain C ticked too">Save</span></div>
+        <div class="s">Today</div>
+        <div class="t" data-dead="the chain you came from: unticking is not simulated"><span class="b rd on">✓</span><span class="grow"><b>Chain A</b> · Grizl<div class="s">40 km past its wax · from Due</div></span></div>
+        <div class="lbl">Off the bike · need wax</div>
+        <div class="t" data-to="s3g-grizl-pot-chain-c-ticked-too"><span class="b rd"></span><span class="grow"><b>Chain C</b> · Grizl<div class="s">needs wax · off the Grizl 02/09/2026</div></span></div>
+        <div class="lbl">On a bike · soonest first</div>
+        <div class="t" data-dead="ticking another bike&#x27;s chain is not simulated"><span class="b rd"></span><span class="grow"><b>Chain</b> · Road<div class="s">wax in 20 km</div></span></div>
+      </div>
+    </div>
+</section>
 <section class="scr" id="s2-a-scrolled-on-the-shelf-tab" hidden>
 <div class="ph"><div class="sb"></div>
       <div class="hd">Grizl<span class="b r" aria-label="Add" data-dead="the Add menu is linked on the Due tab of the bike">+</span></div>
@@ -990,6 +1008,27 @@ body{padding:12px 0 48px;margin:0;-webkit-text-size-adjust:100%;touch-action:man
       </div>
       <div class="tb"><span data-to="s1s-due-select-in-the-bar">Due</span><span class="on" data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Garage</span><span data-to="s19-rides-list-rides-waiting-for-a-bike-come">Rides</span><span data-to="s12-settings-the-fourth-tab">Settings</span></div>
     </div>
+</section>
+<section class="scr" id="s3g-grizl-pot-chain-c-ticked-too" hidden>
+<div class="ph"><div class="sb"></div>
+      <div class="hd">Due<span class="s" style="font-weight:400">4 jobs</span></div>
+      <div class="bd"></div>
+      <div class="tb"><span class="on">Due</span><span>Garage</span><span>Rides</span><span>Settings</span></div>
+      <div class="scrim"></div>
+      <div class="sheet" style="top:40px">
+        <div class="grab"></div>
+        <div class="stb"><span class="b" aria-label="Cancel" data-to="s1-picked-a-c-s-bike-buttons">✕</span><b>Wax session</b><span class="b pri" data-to="s3g-grizl-pot-saved-due-shows-it">Save</span></div>
+        <div class="s">Today</div>
+        <div class="t" data-dead="the chain you came from: unticking is not simulated"><span class="b rd on">✓</span><span class="grow"><b>Chain A</b> · Grizl<div class="s">40 km past its wax · from Due</div></span></div>
+        <div class="lbl">Off the bike · need wax</div>
+        <div class="t" data-to="s3g-grizl-pot-from-due-chain-a-ticked"><span class="b rd on">✓</span><span class="grow"><b>Chain C</b> · Grizl<div class="s">needs wax · off the Grizl 02/09/2026</div></span></div>
+        <div class="lbl">On a bike · soonest first</div>
+        <div class="t" data-dead="ticking another bike&#x27;s chain is not simulated"><span class="b rd"></span><span class="grow"><b>Chain</b> · Road<div class="s">wax in 20 km</div></span></div>
+      </div>
+    </div>
+</section>
+<section class="scr" id="s3g-grizl-pot-saved-due-shows-it" hidden>
+<div class="ph"><div class="sb"></div><div class="hd">Due<span class="s" style="font-weight:400">3 jobs</span><span class="b r" data-to="s1s-select-nothing-ticked-yet">Select</span><span class="b" aria-label="Filter" data-dead="narrowing by kind of part: not drawn">≡</span></div><div class="bd" style="gap:6px"><div class="seg"><span class="b on" data-dead="the bike buttons&#x27; own lists: not drawn">All</span><span class="b" data-dead="the bike buttons&#x27; own lists: not drawn">Grizl</span><span class="b" data-dead="the bike buttons&#x27; own lists: not drawn">Road</span><span class="b" data-dead="the bike buttons&#x27; own lists: not drawn">Hardtail</span><span class="b" data-dead="the bike buttons&#x27; own lists: not drawn">Winter</span></div><div class="c hl col"><b>Wax session · 2 chains waxed today</b><div class="s">chain A, back on the Grizl · chain C, ready on its Shelf</div></div><div class="lbl">Overdue</div><div class="t" data-dead="only the Grizl chain&#x27;s page is linked from Due"><span class="sh"><svg class="ic" role="img" aria-label="overdue"><use href="#i-overdue"/></svg></span><div class="grow"><b>Fork service</b> · Hardtail<div class="s">4 h overdue</div></div><span class="b" data-dead="the rows&#x27; Log buttons are linked on the first Due">Log</span></div><div class="lbl">Due Soon</div><div class="t" data-dead="only the Grizl chain&#x27;s page is linked from Due"><span class="sh"><svg class="ic" role="img" aria-label="due soon"><use href="#i-soon"/></svg></span><div class="grow"><b>Rear tyre</b> · Road<div class="s">210 km left</div></div><span class="b" data-dead="the rows&#x27; Log buttons are linked on the first Due">Log</span></div><div class="lbl">Paused</div><div class="t" data-dead="only the Grizl chain&#x27;s page is linked from Due"><span class="sh"><svg class="ic" role="img" aria-label="paused"><use href="#i-paused"/></svg></span><div class="grow"><b>Chain</b> · Winter<div class="s">no rides since March</div></div><span class="b" data-dead="the rows&#x27; Log buttons are linked on the first Due">Log</span></div></div><div class="tb"><span class="on" data-to="s1s-due-select-in-the-bar">Due</span><span data-to="s2-picked-a-four-tabs-under-the-bike-due-pa">Garage</span><span data-to="s19-rides-list-rides-waiting-for-a-bike-come">Rides</span><span data-to="s12-settings-the-fourth-tab">Settings</span></div></div>
 </section>
 <section class="scr" id="s3r-tapped-part-settings-retire-and-delete-i" data-outside="s3-a-chain-in-a-rotation-on-the-bike-swap-l" hidden>
 <div class="ph"><div class="sb"></div>
